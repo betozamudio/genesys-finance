@@ -1,6 +1,5 @@
-import React from 'react';
-import { BrowserRouter as Router, Routes, Route } from 'react-router-dom';
-import Layout from './components/layout/Layout';
+import { HashRouter as Router, Routes, Route, Navigate } from 'react-router-dom';
+import Layout from './components/Layout';
 import Dashboard from './pages/Dashboard';
 import Billetera from './pages/Billetera';
 import Ingresos from './pages/Ingresos';
@@ -14,10 +13,11 @@ import Balance from './pages/Balance';
 
 function App() {
   return (
-    <Router basename={import.meta.env.BASE_URL}>
+    <Router>
       <Layout>
         <Routes>
-          <Route path="/" element={<Dashboard />} />
+          <Route path="/" element={<Navigate to="/dashboard" replace />} />
+          <Route path="/dashboard" element={<Dashboard />} />
           <Route path="/billetera" element={<Billetera />} />
           <Route path="/ingresos" element={<Ingresos />} />
           <Route path="/egresos" element={<Egresos />} />

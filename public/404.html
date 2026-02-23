@@ -1,0 +1,13 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="utf-8">
+  <title>Genesys Finance</title>
+  <script>
+    var l = window.location;
+    var path = l.pathname.replace('/genesys-finance', '');
+    l.replace(l.protocol + '//' + l.hostname + (l.port ? ':' + l.port : '') + '/genesys-finance/' + '?p=' + path.slice(1).split('/').join('/') + (l.search ? '&q=' + l.search.slice(1).split('&').join('~and~') : '') + l.hash);
+  </script>
+</head>
+<body>Redirecting...</body>
+</html>
